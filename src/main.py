@@ -14,7 +14,7 @@ TEMPLATES_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.
 
 @click.group()
 def cli():
-    """✨ Vibe: Create with intention."""
+    """🚀 Vibe: Create with intention."""
     pass
 
 @cli.command()
@@ -46,7 +46,7 @@ def init(name, template):
             else:
                 shutil.copy2(s, d)
                 
-        console.print("✨ [bold]Vibe check complete.[/bold] Project ready.")
+        console.print("🚀 [bold]Vibe check complete.[/bold] Project ready.")
     except Exception as e:
         console.print(f"[bold red]Error:[/bold red] {e}")
 
