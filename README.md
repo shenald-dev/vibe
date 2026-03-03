@@ -1,20 +1,39 @@
-# vibe
+# Vibe
 
-🚀 **A minimalist, high-performance project scaffolder for modern developers.**
+> A minimalist project scaffolder — get started fast without the bloat.
 
-Vibe is designed for developers who value clean structures and rapid starts. No bloat, just the essential vibes to get you from idea to code in seconds.
+Tired of copying the same folder structure over and over? Vibe creates production-ready project templates in seconds.
 
-## 🚀 Quick Start
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+## Features
+
+- One command scaffolding
+- Opinionated defaults that make sense
+- Zero configuration needed
+- Works offline
+
+## Installation
 
 ```bash
-python src/main.py init my-new-project
+pip install vibe-scaffolder
 ```
 
-## ✨ Features
+## Usage
 
-- **Zero Bloat:** Only the directories you actually need.
-- **Rich UI:** Beautiful terminal feedback.
-- **Extensible:** Easy to add your own templates.
+```bash
+vibe create my-project --template python
+```
 
----
-*Created with intention.*
+## Why I Built This
+
+I was tired of setting up the same project structure for every new tool. I wanted something that handles the boring stuff (git init, README, license) so I can focus on the fun part: coding.
+
+## Contributing
+
+Contributions welcome! Open an issue or PR.
+
+## License
+
+MIT © Shenald
