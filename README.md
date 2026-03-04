@@ -5,6 +5,7 @@
 Tired of copying the same folder structure? Vibe creates production-ready project templates in seconds.
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
+[![CI](https://github.com/shenald-dev/vibe/actions/workflows/ci.yml/badge.svg)](https://github.com/shenald-dev/vibe/actions/workflows/ci.yml)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Features
