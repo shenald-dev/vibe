@@ -1,0 +1,19 @@
+[project]
+name = "vibe-cli"
+version = "0.1.0"
+description = "✨ Scaffold projects at the speed of thought. Minimalist, zero-config starter kits."
+authors = [
+    { name = "shenald-dev", email = "bot@shenald.dev" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "typer>=0.9.0",
+    "rich>=13.7.0"
+]
+
+[project.scripts]
+vibe = "vibe.cli:app"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
