@@ -1,18 +1,24 @@
 import time
 import typer
+from enum import Enum
 from rich.console import Console
 from rich.markup import escape
 from rich.panel import Panel
 from rich.progress import Progress, SpinnerColumn, TextColumn
 
+class TemplateChoice(str, Enum):
+    react = "react"
+    fastapi = "fastapi"
+    node = "node"
+
 app = typer.Typer(help="✨ Scaffold projects at the speed of thought.")
 console = Console()
 
 @app.command()
-def create(name: str, template: str = typer.Option("react", "--template", "-t", help="Template to use (react, fastapi, node)")) -> None:
+def create(name: str, template: TemplateChoice = typer.Option(TemplateChoice.react, "--template", "-t", help="Template to use (react, fastapi, node)")) -> None:
     """Create a new project from a vibe template."""
     escaped_name = escape(name)
-    escaped_template = escape(template)
+    escaped_template = escape(template.value)
 
     console.print(Panel.fit(f"[bold cyan]✨ Generating Vibe Project:[/] [green]{escaped_name}[/]", border_style="cyan"))
     
