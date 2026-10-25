@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Unit tests for the CLI `create` command.
+- **[Fixed / Optimized]:** Replaced `.stdout` with `.output` in test assertions for accuracy.
+- **[Added]:** Added missing edge-case unit test to verify that rich markup injection in user input is safely escaped.
 
 ### Pruned
 - Removed orphaned `__init__.py` file from the project root.
