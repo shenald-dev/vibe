@@ -22,3 +22,8 @@ def test_create_escape_rich_markup_injection():
     assert result.exit_code == 0
     assert "Generating Vibe Project: [red]myproject[/red]" in result.output
     assert "Project [red]myproject[/red] created successfully using the react template" in result.output
+
+def test_create_invalid_template():
+    result = runner.invoke(app, ["myapi", "--template", "invalid"])
+    assert result.exit_code != 0
+    assert "Invalid value for '--template'" in result.output
