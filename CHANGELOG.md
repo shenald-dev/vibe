@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Unit tests for the CLI `create` command.
 - **[Fixed / Optimized]:** Replaced `.stdout` with `.output` in test assertions for accuracy.
 - **[Added]:** Added missing edge-case unit test to verify that rich markup injection in user input is safely escaped.
+- **[Added]:** Added missing edge-case unit test to verify that the CLI correctly handles omitted required name arguments.
+- **[Fixed]:** Fixed `F541` linting warning regarding an unnecessary `f` prefix string in `cli.py`.
 
 ### Pruned
 - Removed orphaned `__init__.py` file from the project root.
