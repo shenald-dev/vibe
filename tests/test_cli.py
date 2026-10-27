@@ -64,3 +64,9 @@ def test_help_flag():
     assert result.exit_code == 0
     assert "Create a new project from a vibe template." in result.output
     assert "--template" in result.output
+
+
+def test_create_empty_name_argument():
+    result = runner.invoke(app, ["  "])
+    assert result.exit_code != 0
+    assert "Project name cannot be empty." in result.output
