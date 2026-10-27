@@ -31,9 +31,11 @@ def create(
     escaped_name = escape(name)
     escaped_template = escape(template.value)
 
+    title = "[bold cyan]✨ Generating Vibe Project:[/] "
+    title += f"[green]{escaped_name}[/]"
     console.print(
         Panel.fit(
-            f"[bold cyan]✨ Generating Vibe Project:[/] [green]{escaped_name}[/]",
+            title,
             border_style="cyan",
         )
     )
@@ -43,16 +45,20 @@ def create(
         TextColumn("[progress.description]{task.description}"),
         transient=True,
     ) as progress:
-        task_id = progress.add_task(description="Downloading dependencies...", total=None)
+        task_id = progress.add_task(
+            description="Downloading dependencies...", total=None
+        )
         time.sleep(1)
-        progress.update(task_id, description=f"Scaffolding {escaped_template} structure...")
+        progress.update(
+            task_id, description=f"Scaffolding {escaped_template} structure..."
+        )
         time.sleep(1.5)
         progress.update(task_id, description="Applying vibe aesthetic...")
         time.sleep(0.5)
 
-    console.print(
-        f"\n[bold green]✔[/] Project [cyan]{escaped_name}[/] created successfully using the [yellow]{escaped_template}[/] template."
-    )
+    msg = f"\n[bold green]✔[/] Project [cyan]{escaped_name}[/] created "
+    msg += f"successfully using the [yellow]{escaped_template}[/] template."
+    console.print(msg)
     console.print("\n[bold]Next Steps:[/]")
     console.print(f"  [gray]$[/] cd {escaped_name}")
     console.print("  [gray]$[/] code .")

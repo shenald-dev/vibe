@@ -2,3 +2,6 @@ __pycache__/
 .venv/
 *.egg-info/
 venv/
+
+.coverage
+git_log.txt

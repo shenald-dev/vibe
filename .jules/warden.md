@@ -14,3 +14,7 @@
 - **QA & Veto Actions:** Mocked `time.sleep` in the test suite to execute instantly instead of hanging, massively improving testing performance.
 - **Entropy Pruned:** Fixed a bug causing unnecessary simultaneous spinner re-renders in the `Progress` output of `cli.py` by reusing the existing task via `progress.update()`.
 - **Deferred / Blocked:** None.
+## 2026-10-27 — Lifecycle & Assurance Ledger
+- **QA & Veto Actions:** Added missing unit tests for the `node` template and `--help` flag to improve coverage. Formatted codebase with `black` and `flake8` to fix styling regressions (E501 line too long).
+- **Entropy Pruned:** None.
+- **Deferred / Blocked:** None.
