@@ -4,11 +4,14 @@ from vibe.cli import app
 
 runner = CliRunner()
 
+
 @pytest.fixture(autouse=True)
 def mock_sleep(monkeypatch):
     """Mock time.sleep to make tests run instantly."""
     import time
+
     monkeypatch.setattr(time, "sleep", lambda x: None)
+
 
 def test_create_default_template():
     result = runner.invoke(app, ["myproject"])
@@ -31,8 +34,8 @@ def test_create_escape_rich_markup_injection():
     assert result.exit_code == 0
     assert "Generating Vibe Project: [red]myproject[/red]" in result.output
     assert (
-        "Project [red]myproject[/red] created successfully using the react template"
-        in result.output
+        "Project [red]myproject[/red] created successfully "
+        "using the react template" in result.output
     )
 
 
@@ -46,3 +49,18 @@ def test_create_missing_name_argument():
     result = runner.invoke(app, [])
     assert result.exit_code != 0
     assert "Missing argument 'name'" in result.output
+
+
+def test_create_node_template():
+    result = runner.invoke(app, ["mynodeapp", "--template", "node"])
+    assert result.exit_code == 0
+    assert "Generating Vibe Project:" in result.output
+    assert "mynodeapp" in result.output
+    assert "created successfully using the node template" in result.output
+
+
+def test_help_flag():
+    result = runner.invoke(app, ["--help"])
+    assert result.exit_code == 0
+    assert "Create a new project from a vibe template." in result.output
+    assert "--template" in result.output
