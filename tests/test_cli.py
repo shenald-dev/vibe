@@ -1,7 +1,14 @@
+import pytest
 from typer.testing import CliRunner
 from vibe.cli import app
 
 runner = CliRunner()
+
+@pytest.fixture(autouse=True)
+def mock_sleep(monkeypatch):
+    """Mock time.sleep to make tests run instantly."""
+    import time
+    monkeypatch.setattr(time, "sleep", lambda x: None)
 
 def test_create_default_template():
     result = runner.invoke(app, ["myproject"])
