@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Unit tests for the CLI `create` command.
+- **[Fixed]:** Fixed bug where CLI generated a project when empty or whitespace names were provided.
+- **[Added]:** Added missing edge-case unit test to verify that the CLI rejects empty or whitespace-only name arguments.
+- **[Optimized]:** Replaced an unused parameter `x` with `_` in `tests/test_cli.py` to fix a Vulture static analysis warning.
 - **[Fixed / Optimized]:** Replaced `.stdout` with `.output` in test assertions for accuracy.
 - **[Added]:** Added missing edge-case unit test to verify that rich markup injection in user input is safely escaped.
 - **[Added]:** Added missing edge-case unit test to verify that the CLI correctly handles omitted required name arguments.

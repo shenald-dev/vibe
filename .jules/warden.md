@@ -18,3 +18,7 @@
 - **QA & Veto Actions:** Added missing unit tests for the `node` template and `--help` flag to improve coverage. Formatted codebase with `black` and `flake8` to fix styling regressions (E501 line too long).
 - **Entropy Pruned:** None.
 - **Deferred / Blocked:** None.
+## 2026-10-28 — Lifecycle & Assurance Ledger
+- **QA & Veto Actions:** Fixed unhandled boundary input bug where `vibe create` would accept empty or whitespace-only names. Added missing unit test `test_create_empty_name_argument` to enforce this.
+- **Entropy Pruned:** Fixed a 100% confidence Vulture unused variable warning in `tests/test_cli.py` (`lambda x: None` to `lambda _: None`).
+- **Deferred / Blocked:** Deferred Phase 3 safe patch dependency updates due to the absence of a dependency lockfile (e.g., `poetry.lock` or `requirements.txt`).

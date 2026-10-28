@@ -10,7 +10,7 @@ def mock_sleep(monkeypatch):
     """Mock time.sleep to make tests run instantly."""
     import time
 
-    monkeypatch.setattr(time, "sleep", lambda x: None)
+    monkeypatch.setattr(time, "sleep", lambda _: None)
 
 
 def test_create_default_template():
@@ -49,6 +49,12 @@ def test_create_missing_name_argument():
     result = runner.invoke(app, [])
     assert result.exit_code != 0
     assert "Missing argument 'name'" in result.output
+
+
+def test_create_empty_name_argument():
+    result = runner.invoke(app, ["  "])
+    assert result.exit_code != 0
+    assert "Project name cannot be empty or whitespace." in result.output
 
 
 def test_create_node_template():
