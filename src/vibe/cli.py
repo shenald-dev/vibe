@@ -28,6 +28,11 @@ def create(
     ),
 ) -> None:
     """Create a new project from a vibe template."""
+    if not name.strip():
+        raise typer.BadParameter(
+            "Project name cannot be empty or just whitespace."
+        )
+
     escaped_name = escape(name)
     escaped_template = escape(template.value)
 

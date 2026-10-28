@@ -51,6 +51,16 @@ def test_create_missing_name_argument():
     assert "Missing argument 'name'" in result.output
 
 
+def test_create_empty_name():
+    result = runner.invoke(app, ["   "])
+    assert result.exit_code != 0
+    assert "Project name cannot be empty or just whitespace." in result.output
+
+    result2 = runner.invoke(app, [""])
+    assert result2.exit_code != 0
+    assert "Project name cannot be empty or just whitespace." in result2.output
+
+
 def test_create_node_template():
     result = runner.invoke(app, ["mynodeapp", "--template", "node"])
     assert result.exit_code == 0
