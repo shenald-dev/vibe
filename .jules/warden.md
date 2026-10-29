@@ -18,3 +18,7 @@
 - **QA & Veto Actions:** Added missing unit tests for the `node` template and `--help` flag to improve coverage. Formatted codebase with `black` and `flake8` to fix styling regressions (E501 line too long).
 - **Entropy Pruned:** None.
 - **Deferred / Blocked:** None.
+## 2026-10-28 — Lifecycle & Assurance Ledger
+- **QA & Veto Actions:** Added a new edge-case unit test `test_create_short_template_flag` to verify the functionality of the short CLI template flag (`-t`).
+- **Entropy Pruned:** Deleted the orphaned and unused `tests/__init__.py` file which acts as dead code. Synced `README.md` to remove incorrect mentions of an "interactive prompt".
+- **Deferred / Blocked:** None.
