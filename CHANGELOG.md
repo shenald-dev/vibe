@@ -18,3 +18,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Pruned
 - Removed orphaned `__init__.py` file from the project root.
+- **[Pruned / Optimized]:** Fixed dead code unused variable in test fixtures (using `_` instead of `x`).
+- **[Fixed]:** Synced README documentation to accurately reflect existing CLI behavior (removed `create` subcommand references).

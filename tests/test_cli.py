@@ -10,7 +10,7 @@ def mock_sleep(monkeypatch):
     """Mock time.sleep to make tests run instantly."""
     import time
 
-    monkeypatch.setattr(time, "sleep", lambda x: None)
+    monkeypatch.setattr(time, "sleep", lambda _: None)
 
 
 def test_create_default_template():
