@@ -56,15 +56,15 @@ pip install vibe-cli
 
 Provide your project name and let the engine scaffold everything for you:
 ```bash
-vibe create my-new-project
+vibe my-new-project
 ```
 *An interactive prompt will guide you through selecting your tech stack.*
 
 ### Use a Direct Template Flag
 Bypass the interactive menu to scaffold instantly in CI/CD pipelines:
 ```bash
-vibe create api-service --template fastapi
-vibe create frontend-app --template react
+vibe api-service --template fastapi
+vibe frontend-app --template react
 ```
 
 ---
