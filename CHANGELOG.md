@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- **[Added]:** Added missing edge-case unit test to ensure full coverage of option aliases (`-t`).
 - Unit tests for the CLI `create` command.
 - **[Fixed / Optimized]:** Replaced `.stdout` with `.output` in test assertions for accuracy.
 - **[Added]:** Added missing edge-case unit test to verify that rich markup injection in user input is safely escaped.
@@ -17,6 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **[Fixed / Optimized]:** Mocked `time.sleep` in the test suite to execute instantly, improving testing performance.
 
 ### Pruned
+- **[Pruned]:** Removed orphaned `tests/__init__.py` file acting as dead code.
 - Removed orphaned `__init__.py` file from the project root.
 - **[Pruned / Optimized]:** Fixed dead code unused variable in test fixtures (using `_` instead of `x`).
+- **[Fixed]:** Synced README documentation to accurately reflect existing CLI behavior (removed incorrect mentions of interactive prompt).
 - **[Fixed]:** Synced README documentation to accurately reflect existing CLI behavior (removed `create` subcommand references).

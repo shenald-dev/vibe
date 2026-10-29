@@ -70,3 +70,10 @@ def test_create_empty_name_argument():
     result = runner.invoke(app, ["  "])
     assert result.exit_code != 0
     assert "Project name cannot be empty." in result.output
+
+def test_create_short_template_flag():
+    result = runner.invoke(app, ["myproject", "-t", "react"])
+    assert result.exit_code == 0
+    assert "Generating Vibe Project:" in result.output
+    assert "myproject" in result.output
+    assert "created successfully using the react template" in result.output

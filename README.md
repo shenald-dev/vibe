@@ -58,7 +58,7 @@ Provide your project name and let the engine scaffold everything for you:
 ```bash
 vibe my-new-project
 ```
-*An interactive prompt will guide you through selecting your tech stack.*
+*By default, this will use the react template.*
 
 ### Use a Direct Template Flag
 Bypass the interactive menu to scaffold instantly in CI/CD pipelines:
