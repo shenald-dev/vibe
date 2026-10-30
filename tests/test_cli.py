@@ -21,6 +21,16 @@ def test_create_default_template():
     assert "created successfully using the react template" in result.output
 
 
+def test_create_name_with_whitespace():
+    result = runner.invoke(app, ["  myproject  "])
+    assert result.exit_code == 0
+    assert "Generating Vibe Project: myproject" in result.output
+    assert (
+        "Project myproject created successfully using the react template"
+        in result.output
+    )
+
+
 def test_create_custom_template():
     result = runner.invoke(app, ["myapi", "--template", "fastapi"])
     assert result.exit_code == 0
@@ -70,6 +80,7 @@ def test_create_empty_name_argument():
     result = runner.invoke(app, ["  "])
     assert result.exit_code != 0
     assert "Project name cannot be empty." in result.output
+
 
 def test_create_short_template_flag():
     result = runner.invoke(app, ["myproject", "-t", "react"])

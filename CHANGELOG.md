@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- **[Fixed]:** Safely strip trailing and leading whitespace from CLI inputs for project names to resolve output formatting issues.
 - **[Added]:** Added missing edge-case unit test to ensure full coverage of option aliases (`-t`).
 - Unit tests for the CLI `create` command.
 - **[Fixed / Optimized]:** Replaced `.stdout` with `.output` in test assertions for accuracy.
