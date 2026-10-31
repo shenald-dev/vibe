@@ -1,3 +1,8 @@
+## 2026-10-31 — Lifecycle & Assurance Ledger
+- **QA & Veto Actions:** Added edge-case unit tests to ensure exact empty strings and strings with only special whitespace characters (`\n`, `\t`) are robustly caught by the new validation.
+- **Entropy Pruned:** Synced `README.md` to remove inaccurate mention of an interactive menu for template selection to accurately reflect the tool's behavior.
+- **Deferred / Blocked:** None.
+
 ## 2026-10-24 — Lifecycle & Assurance Ledger
 - **QA & Veto Actions:** Added unit tests for the `vibe` CLI create command using `typer.testing.CliRunner`.
 - **Entropy Pruned:** Removed the orphaned `__init__.py` file from the root directory.

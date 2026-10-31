@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- **[Added]:** Added missing edge-case unit tests to ensure exact empty strings and strings with only special whitespace characters (`\n`, `\t`) are robustly caught by the validation.
+- **[Fixed]:** Synced README documentation to remove inaccurate mention of an interactive menu for template selection.
 - **[Fixed]:** Safely strip trailing and leading whitespace from CLI inputs for project names to resolve output formatting issues.
 - **[Added]:** Added missing edge-case unit test to ensure full coverage of option aliases (`-t`).
 - Unit tests for the CLI `create` command.

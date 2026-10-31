@@ -82,6 +82,18 @@ def test_create_empty_name_argument():
     assert "Project name cannot be empty." in result.output
 
 
+def test_create_exact_empty_string_name_argument():
+    result = runner.invoke(app, [""])
+    assert result.exit_code != 0
+    assert "Project name cannot be empty." in result.output
+
+
+def test_create_name_with_newlines_and_tabs():
+    result = runner.invoke(app, ["\n\t  \n"])
+    assert result.exit_code != 0
+    assert "Project name cannot be empty." in result.output
+
+
 def test_create_short_template_flag():
     result = runner.invoke(app, ["myproject", "-t", "react"])
     assert result.exit_code == 0

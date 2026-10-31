@@ -61,7 +61,7 @@ vibe my-new-project
 *By default, this will use the react template.*
 
 ### Use a Direct Template Flag
-Bypass the interactive menu to scaffold instantly in CI/CD pipelines:
+Provide the template flag to scaffold instantly in CI/CD pipelines:
 ```bash
 vibe api-service --template fastapi
 vibe frontend-app --template react
