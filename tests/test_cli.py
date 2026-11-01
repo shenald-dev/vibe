@@ -21,6 +21,22 @@ def test_create_default_template():
     assert "created successfully using the react template" in result.output
 
 
+def test_create_name_with_spaces_in_middle():
+    result = runner.invoke(app, ["my new project"])
+    assert result.exit_code == 0
+    assert "Generating Vibe Project: my new project" in result.output
+    assert (
+        "Project my new project created successfully using the react template"
+        in result.output
+    )
+
+
+def test_create_unexpected_extra_arguments():
+    result = runner.invoke(app, ["create", "my-new-project"])
+    assert result.exit_code != 0
+    assert "Got unexpected extra argument" in result.output
+
+
 def test_create_name_with_whitespace():
     result = runner.invoke(app, ["  myproject  "])
     assert result.exit_code == 0
