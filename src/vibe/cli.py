@@ -1,3 +1,4 @@
+import shlex
 import time
 import typer
 from enum import Enum
@@ -64,7 +65,8 @@ def create(
     msg += f"successfully using the [yellow]{escaped_template}[/] template."
     console.print(msg)
     console.print("\n[bold]Next Steps:[/]")
-    console.print(f"  [gray]$[/] cd {escaped_name}")
+    quoted_name = escape(shlex.quote(name))
+    console.print(f"  [gray]$[/] cd {quoted_name}")
     console.print("  [gray]$[/] code .")
     console.print("\n[magenta]Happy vibe coding! ✨[/]\n")
 

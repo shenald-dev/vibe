@@ -21,6 +21,13 @@ def test_create_default_template():
     assert "created successfully using the react template" in result.output
 
 
+def test_create_name_with_spaces_quotes_cd_instruction():
+    result = runner.invoke(app, ["my project"])
+    assert result.exit_code == 0
+    assert "Generating Vibe Project: my project" in result.output
+    assert "cd 'my project'" in result.output
+
+
 def test_create_name_with_whitespace():
     result = runner.invoke(app, ["  myproject  "])
     assert result.exit_code == 0
