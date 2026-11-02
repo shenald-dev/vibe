@@ -1,6 +1,6 @@
-## [Unreleased] — Lifecycle & Assurance Ledger
-- **QA & Veto Actions:** Added a test `test_create_cd_command_escaping` to explicitly verify that the shell output correctly escapes folder names containing special characters or spaces.
-- **Entropy Pruned:** Refactored the `cd` output to use `shlex.quote` for improved safety and reliability against shell injections.
+## 2026-11-02 — Lifecycle & Assurance Ledger
+- **QA & Veto Actions:** Fixed a potential shell injection vulnerability by wrapping user-provided project names with `shlex.quote()` when outputting the `cd` instruction in the CLI. Added corresponding unit test assertions.
+- **Entropy Pruned:** None.
 - **Deferred / Blocked:** None.
 
 ## 2026-11-01 — Lifecycle & Assurance Ledger

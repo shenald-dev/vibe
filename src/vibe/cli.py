@@ -1,5 +1,5 @@
-import time
 import shlex
+import time
 import typer
 from enum import Enum
 from rich.console import Console
@@ -65,7 +65,7 @@ def create(
     msg += f"successfully using the [yellow]{escaped_template}[/] template."
     console.print(msg)
     console.print("\n[bold]Next Steps:[/]")
-    console.print(f"  [gray]$[/] cd {shlex.quote(escaped_name)}")
+    console.print(f"  [gray]$[/] cd {escape(shlex.quote(name))}")
     console.print("  [gray]$[/] code .")
     console.print("\n[magenta]Happy vibe coding! ✨[/]\n")
 

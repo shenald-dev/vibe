@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- **[Fixed]:** Safely wrap user-provided project name with shlex.quote() in the cd output to prevent invalid shell commands or injection risks.
 - **[Added]:** Added missing edge-case unit tests for handling spaces inside project names and rejecting extra positional arguments.
 - **[Added]:** Added missing edge-case unit tests to ensure exact empty strings and strings with only special whitespace characters (`\n`, `\t`) are robustly caught by the validation.
 - **[Fixed]:** Synced README documentation to remove inaccurate mention of an interactive menu for template selection.

@@ -21,12 +21,6 @@ def test_create_default_template():
     assert "created successfully using the react template" in result.output
 
 
-def test_create_cd_command_escaping():
-    result = runner.invoke(app, ["my new project"])
-    assert result.exit_code == 0
-    assert "cd 'my new project'" in result.output
-
-
 def test_create_name_with_spaces_in_middle():
     result = runner.invoke(app, ["my new project"])
     assert result.exit_code == 0
@@ -35,6 +29,7 @@ def test_create_name_with_spaces_in_middle():
         "Project my new project created successfully using the react template"
         in result.output
     )
+    assert "cd 'my new project'" in result.output
 
 
 def test_create_unexpected_extra_arguments():
