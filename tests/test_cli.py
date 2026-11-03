@@ -21,6 +21,12 @@ def test_create_default_template():
     assert "created successfully using the react template" in result.output
 
 
+def test_create_cd_command_escaping_single_quote():
+    result = runner.invoke(app, ["my'[red]project"])
+    assert result.exit_code == 0
+    assert "cd 'my'\"'\"'[red]project'" in result.output
+
+
 def test_create_cd_command_escaping():
     result = runner.invoke(app, ["my new project"])
     assert result.exit_code == 0
