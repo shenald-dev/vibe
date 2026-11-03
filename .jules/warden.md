@@ -1,5 +1,6 @@
 ## [Unreleased] — Lifecycle & Assurance Ledger
 - **QA & Veto Actions:** Added a test `test_create_cd_command_escaping` to explicitly verify that the shell output correctly escapes folder names containing special characters or spaces.
+- **Security Vulnerability Fix:** Fixed rich markup injection regression in `cd` command output by applying `shlex.quote` before `escape` instead of the other way around.
 - **Entropy Pruned:** Refactored the `cd` output to use `shlex.quote` for improved safety and reliability against shell injections.
 - **Deferred / Blocked:** None.
 
