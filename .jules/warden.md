@@ -43,3 +43,5 @@
 - **QA & Veto Actions:** Added test and fixed whitespace input handling in CLI arguments.
 - **Entropy Pruned:** None.
 - **Deferred / Blocked:** None.
+## 2024-05-24 — Lifecycle & Assurance Ledger
+- **QA & Veto Actions:** Fixed shell escaping bug for the `cd` command where rich markup escaping was happening before shell quotation, which caused invalid terminal outputs and possible shell injection vectors.
