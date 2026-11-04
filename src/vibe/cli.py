@@ -33,6 +33,10 @@ def create(
     if not name:
         raise typer.BadParameter("Project name cannot be empty.")
 
+    if any(ord(c) < 32 or ord(c) == 127 for c in name):
+        msg = "Project name cannot contain control characters."
+        raise typer.BadParameter(msg)
+
     escaped_name = escape(name)
     escaped_template = escape(template.value)
 

@@ -27,6 +27,18 @@ def test_create_uppercase_template():
     assert "Invalid value for '--template'" in result.output
 
 
+def test_create_ansi_escape_injection():
+    result = runner.invoke(app, ["\033[2J\033[Hcleared"])
+    assert result.exit_code != 0
+    assert "Project name cannot contain control characters." in result.output
+
+
+def test_create_control_characters():
+    result = runner.invoke(app, ["my\x07project"])
+    assert result.exit_code != 0
+    assert "Project name cannot contain control characters." in result.output
+
+
 def test_create_cd_command_escaping_single_quote():
     result = runner.invoke(app, ["my'[red]project"])
     assert result.exit_code == 0
