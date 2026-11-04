@@ -50,3 +50,8 @@
 - **Deferred / Blocked:** None.
 ## 2024-05-24 — Lifecycle & Assurance Ledger
 - **QA & Veto Actions:** Fixed shell escaping bug for the `cd` command where rich markup escaping was happening before shell quotation, which caused invalid terminal outputs and possible shell injection vectors.
+## 2026-11-02 — Lifecycle & Assurance Ledger
+- **QA & Veto Actions:** Added security tests `test_create_ansi_escape_injection` and `test_create_control_characters` to actively ensure CLI input sanitization protects against terminal injection.
+- **Security Vulnerability Fix:** Fixed terminal control code injection (like clearing the screen via `\033[2J\033[H`) by explicitly rejecting user input that contains ASCII control characters (codepoints `<32` and `127`).
+- **Entropy Pruned:** None.
+- **Deferred / Blocked:** None.
