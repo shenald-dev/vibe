@@ -21,6 +21,12 @@ def test_create_default_template():
     assert "created successfully using the react template" in result.output
 
 
+def test_create_uppercase_template():
+    result = runner.invoke(app, ["myproject", "--template", "REACT"])
+    assert result.exit_code != 0
+    assert "Invalid value for '--template'" in result.output
+
+
 def test_create_cd_command_escaping_single_quote():
     result = runner.invoke(app, ["my'[red]project"])
     assert result.exit_code == 0

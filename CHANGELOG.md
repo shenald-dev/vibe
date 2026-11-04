@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- **[Added]:** Added missing edge-case unit test `test_create_uppercase_template` to verify that uppercase or incorrectly cased template values fail gracefully.
 - **[Fixed]:** Fixed shell escaping bug for the `cd` command, wrapping user variables in `shlex.quote()` before Rich `escape()`.
 - **[Added]:** Added missing edge-case unit tests for handling spaces inside project names and rejecting extra positional arguments.
 - **[Added]:** Added missing edge-case unit tests to ensure exact empty strings and strings with only special whitespace characters (`\n`, `\t`) are robustly caught by the validation.
