@@ -49,21 +49,24 @@ def create(
         )
     )
 
-    with Progress(
-        SpinnerColumn(spinner_name="dots2"),
-        TextColumn("[progress.description]{task.description}"),
-        transient=True,
-    ) as progress:
-        task_id = progress.add_task(
-            description="Downloading dependencies...", total=None
-        )
-        time.sleep(1)
-        progress.update(
-            task_id, description=f"Scaffolding {escaped_template} structure..."
-        )
-        time.sleep(1.5)
-        progress.update(task_id, description="Applying vibe aesthetic...")
-        time.sleep(0.5)
+    try:
+        with Progress(
+            SpinnerColumn(spinner_name="dots2"),
+            TextColumn("[progress.description]{task.description}"),
+            transient=True,
+        ) as progress:
+            task_id = progress.add_task(
+                description="Downloading dependencies...", total=None
+            )
+            time.sleep(1)
+            desc = f"Scaffolding {escaped_template} structure..."
+            progress.update(task_id, description=desc)
+            time.sleep(1.5)
+            progress.update(task_id, description="Applying vibe aesthetic...")
+            time.sleep(0.5)
+    except KeyboardInterrupt:
+        console.print("\n[red]❌ Scaffolding aborted by user.[/red]")
+        raise typer.Exit(code=130)
 
     msg = f"\n[bold green]✔[/] Project [cyan]{escaped_name}[/] created "
     msg += f"successfully using the [yellow]{escaped_template}[/] template."

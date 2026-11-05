@@ -55,3 +55,8 @@
 - **Security Vulnerability Fix:** Fixed terminal control code injection (like clearing the screen via `\033[2J\033[H`) by explicitly rejecting user input that contains ASCII control characters (codepoints `<32` and `127`).
 - **Entropy Pruned:** None.
 - **Deferred / Blocked:** None.
+## 2026-11-05 — Lifecycle & Assurance Ledger
+- **QA & Veto Actions:** Added a unit test `test_create_keyboard_interrupt` utilizing `monkeypatch` to simulate and test interrupt functionality mid-execution.
+- **Reliability & Error Handling Fix:** Wrapped the main execution and `Progress` spinner in `src/vibe/cli.py` with a `try...except KeyboardInterrupt` block. This prevents potentially confusing raw traceback dumps upon early termination and instead cleanly prints an abort message and returns the appropriate signal exit code `130`.
+- **Entropy Pruned:** None.
+- **Deferred / Blocked:** None.

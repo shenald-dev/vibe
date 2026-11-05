@@ -146,3 +146,16 @@ def test_create_short_template_flag():
     assert "Generating Vibe Project:" in result.output
     assert "myproject" in result.output
     assert "created successfully using the react template" in result.output
+
+
+def test_create_keyboard_interrupt(monkeypatch):
+    def mock_sleep_interrupt(_):
+        raise KeyboardInterrupt()
+
+    import time
+
+    monkeypatch.setattr(time, "sleep", mock_sleep_interrupt)
+
+    result = runner.invoke(app, ["myproject"])
+    assert result.exit_code == 130
+    assert "Scaffolding aborted by user." in result.output
