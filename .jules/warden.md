@@ -4,7 +4,7 @@
 - **Deferred / Blocked:** None.
 
 ## [Unreleased] — Lifecycle & Assurance Ledger
-- **QA & Veto Actions:** Added a test `test_create_uppercase_template` to explicitly verify that uppercase template arguments fail validation properly, covering an unhandled case.
+- **QA & Veto Actions:** Added `test_create_name_starting_with_dash` edge-case unit test to ensure Typer handles inputs starting with a dash properly when separated by `--`. Added a test `test_create_uppercase_template` to explicitly verify that uppercase template arguments fail validation properly, covering an unhandled case.
 - **Entropy Pruned:** None.
 - **Deferred / Blocked:** None.
 
