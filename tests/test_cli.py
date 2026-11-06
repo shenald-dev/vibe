@@ -165,3 +165,9 @@ def test_create_keyboard_interrupt(monkeypatch):
     result = runner.invoke(app, ["myproject"])
     assert result.exit_code == 130
     assert "Scaffolding aborted by user." in result.output
+
+
+def test_create_c1_control_character_injection():
+    result = runner.invoke(app, ["\x9b2J\x9bHcleared"])
+    assert result.exit_code != 0
+    assert "Project name cannot contain control characters." in result.output
