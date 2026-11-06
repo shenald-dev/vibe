@@ -171,3 +171,13 @@ def test_create_c1_control_character_injection():
     result = runner.invoke(app, ["\x9b2J\x9bHcleared"])
     assert result.exit_code != 0
     assert "Project name cannot contain control characters." in result.output
+
+
+def test_create_name_starting_with_dash():
+    result = runner.invoke(app, ["--", "-myproject"])
+    assert result.exit_code == 0
+    assert "Generating Vibe Project: -myproject" in result.output
+    assert (
+        "Project -myproject created successfully using the react template"
+        in result.output
+    )
