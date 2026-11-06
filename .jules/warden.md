@@ -1,3 +1,8 @@
+## 2026-11-05 — Lifecycle & Assurance Ledger
+- **QA & Veto Actions:** Added `test_create_del_control_character` to complete the test suite for terminal control code injection protection against the `\x7f` DEL character.
+- **Entropy Pruned:** Removed the temporary `git_log.txt` file. Synced `CHANGELOG.md` to document the control character fix and corresponding security tests.
+- **Deferred / Blocked:** None.
+
 ## [Unreleased] — Lifecycle & Assurance Ledger
 - **QA & Veto Actions:** Added a test `test_create_uppercase_template` to explicitly verify that uppercase template arguments fail validation properly, covering an unhandled case.
 - **Entropy Pruned:** None.

@@ -39,6 +39,12 @@ def test_create_control_characters():
     assert "Project name cannot contain control characters." in result.output
 
 
+def test_create_del_control_character():
+    result = runner.invoke(app, ["my\x7fproject"])
+    assert result.exit_code != 0
+    assert "Project name cannot contain control characters." in result.output
+
+
 def test_create_cd_command_escaping_single_quote():
     result = runner.invoke(app, ["my'[red]project"])
     assert result.exit_code == 0
