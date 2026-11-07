@@ -33,7 +33,7 @@ def create(
     if not name:
         raise typer.BadParameter("Project name cannot be empty.")
 
-    if any(ord(c) < 32 or 127 <= ord(c) <= 159 for c in name):
+    if not name.isprintable():
         msg = "Project name cannot contain control characters."
         raise typer.BadParameter(msg)
 

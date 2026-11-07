@@ -181,3 +181,9 @@ def test_create_name_starting_with_dash():
         "Project -myproject created successfully using the react template"
         in result.output
     )
+
+
+def test_create_bidi_override_injection():
+    result = runner.invoke(app, ["mal\u202eicious"])
+    assert result.exit_code != 0
+    assert "Project name cannot contain control characters." in result.output
