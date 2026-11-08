@@ -1,11 +1,30 @@
 [project]
-name = "vibe-cli"
+name = "vibe-scaffold"
 version = "0.1.0"
 description = "✨ Scaffold projects at the speed of thought. Minimalist, zero-config starter kits."
+readme = "README.md"
+license = { text = "MIT" }
 authors = [
-    { name = "shenald-dev", email = "bot@shenald.dev" }
+    { name = "Shenal Diluksha", email = "shenald@users.noreply.github.com" }
+]
+maintainers = [
+    { name = "shenald-dev", email = "shenald@users.noreply.github.com" }
 ]
 requires-python = ">=3.10"
+keywords = ["vibe", "scaffold", "starter-kit", "project-generator", "fastapi", "react", "template", "cli", "tui"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Code Generators",
+    "Topic :: Utilities"
+]
 dependencies = [
     "typer>=0.9.0",
     "rich>=13.7.0"
@@ -14,9 +33,23 @@ dependencies = [
 [project.scripts]
 vibe = "vibe.cli:app"
 
+[project.urls]
+Homepage = "https://github.com/shenald-dev/vibe"
+Documentation = "https://github.com/shenald-dev/vibe#readme"
+Repository = "https://github.com/shenald-dev/vibe"
+Issues = "https://github.com/shenald-dev/vibe/issues"
+Changelog = "https://github.com/shenald-dev/vibe/blob/main/CHANGELOG.md"
+
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
 
 [tool.vulture]
 ignore_names = ["fastapi", "node", "create", "mock_sleep"]

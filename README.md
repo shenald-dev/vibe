@@ -9,6 +9,7 @@
 
   <br/>
   
+  [![PyPI version](https://img.shields.io/pypi/v/vibe-scaffold.svg)](https://pypi.org/project/vibe-scaffold/)
   [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://python.org)
   [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 </div>
@@ -43,9 +44,16 @@
 
 ### Installation
 
-Install the CLI tool globally:
+Install directly via `pip`:
 ```bash
-pip install vibe-cli
+pip install vibe-scaffold
+```
+
+Or install via `pipx` or `uv`:
+```bash
+pipx install vibe-scaffold
+# or
+uv tool install vibe-scaffold
 ```
 
 ---
