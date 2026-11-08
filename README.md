@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/logo.png" alt="vibe Logo" width="250" />
+  <img src="https://raw.githubusercontent.com/shenald-dev/vibe/main/assets/logo.png" alt="vibe Logo" width="250" />
   
   <br/>
 
