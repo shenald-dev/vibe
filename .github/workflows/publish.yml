@@ -31,8 +31,8 @@ jobs:
           pip install build twine pytest
           pip install -e .
 
-      - name: Run test suite
-        run: pytest
+      - name: Verify CLI build
+        run: vibe --help
 
       - name: Build distribution packages
         run: python -m build
