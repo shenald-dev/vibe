@@ -1,5 +1,6 @@
 import pytest
 from typer.testing import CliRunner
+
 from vibe.cli import app
 
 runner = CliRunner()

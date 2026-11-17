@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- **[Fixed]:** Resolved `ruff check` failures by sorting import blocks (I001) and exempting `typer.Option`/`typer.Argument` from flake8-bugbear B008, matching the lint standard used in sibling projects.
 - **[Fixed]:** Fixed a terminal injection vulnerability where unprintable unicode characters (such as the Right-to-Left Override character `U+202E`) were allowed in project names.
 - **[Added]:** Added missing edge-case unit test to ensure project names starting with a dash are properly parsed using the `--` argument separator.
 - **[Fixed]:** Fixed terminal control code injection vulnerability by explicitly rejecting project names containing ASCII control characters (codepoints <32 or 127).

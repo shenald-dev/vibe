@@ -53,3 +53,6 @@ pythonpath = ["src"]
 
 [tool.vulture]
 ignore_names = ["fastapi", "node", "create", "mock_sleep"]
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["typer.Argument", "typer.Option"]

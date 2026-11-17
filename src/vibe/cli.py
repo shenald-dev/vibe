@@ -1,7 +1,8 @@
-import time
 import shlex
-import typer
+import time
 from enum import Enum
+
+import typer
 from rich.console import Console
 from rich.markup import escape
 from rich.panel import Panel
